@@ -128,11 +128,7 @@ structure EnforcementEnv where
   deriving Repr
 
 /-
-from the paper definition 3.3:
-- Stop: eᵣ(τᵢ) = τ[:-1] → a_f sᵢ
-- User Inspection: eᵣ(τᵢ) = τ_i if user permits, else τᵢ → a_f sᵢ
-- Predefined Action: eᵣ(τᵢ) = τᵢ → aₚ s'ᵢ
-- LLM Self-Examination: eᵣ(τᵢ) = τᵢ → a_c s'ᵢ
+from the paper definition 3.3 and controlled_agent_executor.py:
 -/
 def Enforcement.apply (e : Enforcement) (ctx : EnforcementContext) (env : EnforcementEnv) : EnforcementOutcome :=
   match e with

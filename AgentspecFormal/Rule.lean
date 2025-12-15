@@ -1,13 +1,3 @@
-/-
-  from the paper section 3.1
-  "Each rule consists of five parts:
-   1. rule: keyword marking the beginning, followed by unique identifier
-   2. trigger: specifying the event that activates the rule
-   3. check: conditions that must be satisfied (conjunctions of predicates)
-   4. enforce: actions taken when rule is triggered
-   5. end: keyword marking conclusion"
--/
-
 import AgentspecFormal.Basic
 import AgentspecFormal.Events
 import AgentspecFormal.Predicates
@@ -15,8 +5,15 @@ import AgentspecFormal.Enforcements
 
 namespace AgentSpec
 
-/-!
-From figure 3:
+/-
+from the paper section 3.1
+"Each rule consists of five parts:
+  1. rule: keyword marking the beginning, followed by unique identifier
+  2. trigger: specifying the event that activates the rule
+  3. check: conditions that must be satisfied (conjunctions of predicates)
+  4. enforce: actions taken when rule is triggered
+  5. end: keyword marking conclusion"
+from grammar:
 ```
 ⟨Rule⟩ ::= rule ⟨Id⟩
            trigger ⟨Event⟩
@@ -25,7 +22,6 @@ From figure 3:
            end
 ```
 -/
-
 
 /-
 from Definition 3.1:
@@ -129,7 +125,6 @@ structure RuleState where
 
 namespace RuleState
 
-/-- Initial rule state -/
 def initial (userInput : UserInput) : RuleState :=
   { toolkit := ""
   , action := none
