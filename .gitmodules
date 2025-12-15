@@ -1,0 +1,3 @@
+[submodule "AgentSpec"]
+	path = AgentSpec
+	url = https://github.com/haoyuwang99/AgentSpec
